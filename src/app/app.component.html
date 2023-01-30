@@ -17,6 +17,13 @@
   </div>
 </div>
 
+<!-- <button class="btn btn-success" (click)="showSecret = !showSecret">Display Details</button> -->
+<button class="btn btn-success" (click)="onToggleDetails()">Display Details</button>
+<p *ngIf="showSecret">Secret PW: tuna</p>
+<div 
+    *ngFor="let logItem of log"
+    [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white' : logItem >= 5}">{{ logItem }}</div>
 <hr>
 <app-servers></app-servers>
 <app-warning-alert></app-warning-alert>
